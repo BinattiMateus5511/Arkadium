@@ -1,0 +1,19 @@
+1716462448431	geckodriver	INFO	Listening on 127.0.0.1:52819
+1716462451526	mozrunner::runner	INFO	Running command: "C:\\Users\\Mateus Binatti\\.cache\\selenium\\firefox\\win64\\126.0\\firefox.exe" "--marionette" "--remote-d ... "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\MATEUS~1\\AppData\\Local\\Temp\\rust_mozprofilegbf4jl"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1716462451863	Marionette	INFO	Marionette enabled
+1716462451928	Marionette	INFO	Listening on port 52827
+WebDriver BiDi listening on ws://127.0.0.1:52820
+Read port: 52827
+1716462452020	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:52820/devtools/browser/defd3509-d58b-4f07-978e-ddb1bd7f265e
+JavaScript warning: https://www.gamelab.com/vendors.fba8751d6dabea67a70b.js, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1716462459191	Marionette	INFO	Stopped listening on port 52827
+JavaScript warning: https://client.aps.amazon-adsystem.com/publisher.js, line 2: Script terminated by timeout at:
+L@https://client.aps.amazon-adsystem.com/publisher.js:2:15523
+resetStoreItemCount@https://client.aps.amazon-adsystem.com/publisher.js:2:20464
+throwOnInfiniteLoop/<@https://client.aps.amazon-adsystem.com/publisher.js:2:24668
+
+Dynamically enable window occlusion 1

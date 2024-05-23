@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-05-23T18:23:42.923267" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCases" source="C:\Arkadium\TestCases.robot">
+<test id="s1-t1" name="Scenario 1: Complete a puzzle" line="8">
+<kw name="Given I Access the Daily Quick Crossword website" owner="Resource">
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${IMPLICIT_WAIT_TIME}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-05-23T18:23:43.147021" elapsed="0.001075"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:23:43.148096" level="INFO">Opening browser 'chrome' to base url 'https://www.gamelab.com/games/daily-quick-crossword'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-23T18:23:43.148096" elapsed="2.936131"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-23T18:23:46.085223" elapsed="0.024378"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-23T18:23:51.110820" level="INFO">Slept 5 seconds.</msg>
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-23T18:23:46.110139" elapsed="5.000681"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:23:51.110820" level="INFO">Clicking button '//button[@mode='primary']'.</msg>
+<arg>${ACCEPT_PRIVACY}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:23:51.110820" elapsed="0.139526"/>
+</kw>
+<status status="PASS" start="2024-05-23T18:23:43.147021" elapsed="8.104321"/>
+</kw>
+<kw name="And I navigate to the daily puzzle" owner="Resource">
+<kw name="Select Frame" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:23:51.251342" level="INFO">Selecting frame '//iframe[@aria-label='canvas box for game']'.</msg>
+<arg>${GAME_FRAME}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="PASS" start="2024-05-23T18:23:51.251342" elapsed="0.019660"/>
+</kw>
+<kw name="Take Screenshot" owner="Screenshot">
+<msg time="2024-05-23T18:23:51.325886" level="INFO" html="true">&lt;a href="screenshot_65.jpg"&gt;&lt;img src="screenshot_65.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<status status="PASS" start="2024-05-23T18:23:51.271002" elapsed="0.055880"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:23:52.468661" level="INFO">${DAY_VALUE} = 23</msg>
+<var>${DAY_VALUE}</var>
+<arg>${DAILY_PUZZLE_DAY}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:23:51.326882" elapsed="1.141779"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:23:52.481618" level="INFO">${MONTH_YEAR_VALUE} = MAY 2024</msg>
+<var>${MONTH_YEAR_VALUE}</var>
+<arg>${MONTH_YEAR_HOME}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.468661" elapsed="0.012957"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${MONTH_YEAR_VALUE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.481618" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:23:52.482615" level="INFO">Clicking element '//li[@class='_2BOPctp29PxsHq2CqVoKII _2iAH5VnOWbhlqrKN5CXRpN gameStart_puzzle__UKU36']'.</msg>
+<arg>${DAILY_PUZZLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.481618" elapsed="0.075747"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:23:52.700678" level="INFO">${FOOTER_VALUE} = Daily Quick Crossword: 23 May 2024By Michael Curl</msg>
+<var>${FOOTER_VALUE}</var>
+<arg>${GAME_FOOTER_INFO}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.557365" elapsed="0.143313"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${FOOTER_VALUE}</arg>
+<arg>${DAY_VALUE}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.700678" elapsed="0.000000"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2024-05-23T18:23:52.701675" level="INFO">${FOOTER_VALUE} =  23 May 2024By Michael Curl</msg>
+<var>${FOOTER_VALUE}</var>
+<arg>${FOOTER_VALUE}</arg>
+<arg>,</arg>
+<arg>Daily Quick Crossword:</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.700678" elapsed="0.000997"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2024-05-23T18:23:52.701675" level="INFO">${FOOTER_VALUE} =  23 May 2024</msg>
+<var>${FOOTER_VALUE}</var>
+<arg>${FOOTER_VALUE}</arg>
+<arg>,</arg>
+<arg>By Michael Curl</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.701675" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2024-05-23T18:23:52.701675" level="INFO">${FOOTER_VALUE} = 23 May 2024</msg>
+<var>${FOOTER_VALUE}</var>
+<arg>${FOOTER_VALUE}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.701675" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Upper Case" owner="String">
+<msg time="2024-05-23T18:23:52.701675" level="INFO">${FOOTER_VALUE} = 23 MAY 2024</msg>
+<var>${FOOTER_VALUE}</var>
+<arg>${FOOTER_VALUE}</arg>
+<doc>Converts string to upper case.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.701675" elapsed="0.000000"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-05-23T18:23:52.702672" level="INFO">${COMPLETE_PUZZLE_DATE} = 23 MAY 2024</msg>
+<var>${COMPLETE_PUZZLE_DATE}</var>
+<arg>${DAY_VALUE}</arg>
+<arg>${MONTH_YEAR_VALUE}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.701675" elapsed="0.000997"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${FOOTER_VALUE}</arg>
+<arg>${COMPLETE_PUZZLE_DATE}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.702672" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${COMPLETE_PUZZLE_DATE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.702672" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-05-23T18:23:51.251342" elapsed="1.451330"/>
+</kw>
+<kw name="When I fill all the words correctly" owner="Resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:23:52.703668" level="INFO">Clicking button '//button[@data-tip='(Ctrl+V)']'.</msg>
+<arg>${REVEAL_BUTTON_MENU}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.703668" elapsed="0.069766"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:23:52.773434" level="INFO">Clicking element '//li[text()='Reveal puzzle']'.</msg>
+<arg>${REVEAL_PUZZLE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.773434" elapsed="0.126878"/>
+</kw>
+<kw name="Take Screenshot" owner="Screenshot">
+<msg time="2024-05-23T18:23:52.945160" level="INFO" html="true">&lt;a href="screenshot_66.jpg"&gt;&lt;img src="screenshot_66.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.900312" elapsed="0.044848"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-23T18:23:57.945385" level="INFO">Slept 5 seconds.</msg>
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-23T18:23:52.945160" elapsed="5.000225"/>
+</kw>
+<status status="PASS" start="2024-05-23T18:23:52.703668" elapsed="5.241717"/>
+</kw>
+<kw name="And I click the Review Answers button" owner="Resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:23:57.946358" level="INFO">Clicking button '//button[text()='Review Answers']'.</msg>
+<arg>${REWIEW_ANSWERS_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:23:57.945385" elapsed="0.065116"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-23T18:24:03.011019" level="INFO">Slept 5 seconds.</msg>
+<arg>5 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-23T18:23:58.010501" elapsed="5.000518"/>
+</kw>
+<kw name="Take Screenshot" owner="Screenshot">
+<msg time="2024-05-23T18:24:03.067648" level="INFO" html="true">&lt;a href="screenshot_67.jpg"&gt;&lt;img src="screenshot_67.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<status status="PASS" start="2024-05-23T18:24:03.011019" elapsed="0.056629"/>
+</kw>
+<status status="PASS" start="2024-05-23T18:23:57.945385" elapsed="5.122263"/>
+</kw>
+<kw name="Then I should be able to see the completed puzzle" owner="Resource">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-23T18:24:03.085428" level="INFO">${SCORE_VALUE} = 100% (120 letters) solved with help</msg>
+<var>${SCORE_VALUE}</var>
+<arg>${SCORE_LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-23T18:24:03.068644" elapsed="0.016784"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${SCORE_VALUE}</arg>
+<arg>100</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-05-23T18:24:03.085428" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-05-23T18:24:03.068644" elapsed="0.016784"/>
+</kw>
+<status status="PASS" start="2024-05-23T18:23:43.146099" elapsed="19.940327"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-23T18:24:03.087423" elapsed="2.178095"/>
+</kw>
+<status status="PASS" start="2024-05-23T18:23:42.924263" elapsed="22.341255"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestCases">TestCases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
